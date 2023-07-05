@@ -1,17 +1,26 @@
-import java.util.*;
 class Solution {
-    public int removeDuplicates(int[] nums) {
-        LinkedHashSet<Integer> set = new LinkedHashSet<>();
+    public int[][] flipAndInvertImage(int[][] arr) {
+        for (int i = 0; i < arr.length; i++) {
 
-        for(int i = 0; i < nums.length; i++){
-            set.add(nums[i]);
-        }
-        //copy unique element back to array
-        int i = 0;
+			int start = 0;
+			int end = arr[i].length - 1;
 
-        for(int ele:set){
-            nums[i++] = ele;
-        }
-        return set.size();
+			while (start < end) {
+
+				int temp = arr[i][start];
+				arr[i][start] = arr[i][end];
+				arr[i][end] = temp;
+
+				start++;
+				end--;
+			}
+		}
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = arr[i][j] ^ 1;
+			}
+
+		}
+		return arr;
     }
 }
