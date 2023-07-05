@@ -1,17 +1,20 @@
 class Solution {
-    public int mySqrt(int x) {
-        int low = 1 , high = x  , ans = 0;
-
-            while (low <= high){
-              int mid = low + (high - low) /2;
-
-                if (x/mid == mid) return mid;
-                else if (x/mid < mid)  high = mid-1;
-                else {
-                    low= mid + 1; ans=mid;
-                }
+    public int mySqrt(int n) {
+       int f = 0;
+        int e = n;
+        
+        while (f <= e) {
+            int mid = f + (e - f) / 2;
+            if (mid * mid == n) {
+                return mid;
             }
-        return ans;
+            if (mid * mid > n) {
+                e = mid - 1;
+            } else {
+                f = mid + 1;
+            }
+        }
+        return e;
     }
     
 }
