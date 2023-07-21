@@ -1,5 +1,5 @@
 class Solution {
-    public String convertToTitle(int n) {
+    public static  String convertToTitle(int n) {
         
         StringBuilder sb = new StringBuilder();
         
@@ -11,5 +11,9 @@ class Solution {
         
         sb.reverse();
         return sb.toString();
+    }
+    public static void main(String[] args) {
+        System.out.println(convertToTitle(701));
+
     }
 }
