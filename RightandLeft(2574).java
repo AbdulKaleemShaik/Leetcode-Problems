@@ -1,4 +1,5 @@
 class Solution {
+    
     public int[] leftRightDifference(int[] nums) {
        int leftSum = 0, rightSum = 0;
        for(int n : nums) rightSum += n;
