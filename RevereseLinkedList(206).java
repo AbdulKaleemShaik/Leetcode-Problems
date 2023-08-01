@@ -15,4 +15,5 @@ class Solution {
 
 class ListNode {
     ListNode next;
+    public int val;
 }
