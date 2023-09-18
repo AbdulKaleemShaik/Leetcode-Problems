@@ -8,30 +8,19 @@ import javax.swing.tree.TreeNode;
 class Solution {
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> result = new ArrayList<>();
-        if (root == null) {
-            return result;
-        }
-        Queue<TreeNode> qr = new LinkedList<>();
-        qr.add(root);
-        while (!qr.isEmpty()) {
-            int size = qr.size();
-            List<Integer> curlevel = new ArrayList<>();
-            for (int i = 0; i < size; i++) {
-                TreeNode curnode = qr.poll();
-                if (i == size - 1) {
-                    result.add(curnode.val);
-                }
-
-                if (curnode.left != null) {
-                    qr.add(curnode.left);
-                }
-                if (curnode.right != null) {
-                    qr.add(curnode.right);
-                }
-            }
-
-        }
-
+        rightview(root, result, 0);
         return result;
+
+    }
+
+    public void rightview(TreeNode curr, List<Integer> result, int depth) {
+        if (curr == null) {
+            return;
+        }
+        if (depth == result.size()) {
+            result.add(curr.val);
+        }
+        rightview(curr.right, result, depth + 1);
+        rightview(curr.left, result, depth + 1);
     }
 }
