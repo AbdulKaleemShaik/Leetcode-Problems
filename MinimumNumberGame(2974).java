@@ -12,7 +12,7 @@ class Solution {
         // h++;
         // j+=2;
         // k+=2;
-        // }
+        // }T
         for (int i = 0; i < nums.length - 1; i += 2) {
             int a = nums[i];
             nums[i] = nums[i + 1];
