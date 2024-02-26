@@ -7,6 +7,7 @@ public class Solution {
             rev = (rev * 10) + (x % 10);
             x /= 10;
         }
+        
         if (rev == n) return true;
         return false;
     }
