@@ -1,3 +1,4 @@
+
 class Solution {
     public String[] shortestSubstrings(String[] arr) {
         String[] ans = new String[arr.length];
