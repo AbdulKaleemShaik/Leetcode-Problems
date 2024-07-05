@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class GFG {
+public class Greater {
 
     static void display(int countLeftGreater[], int N) {
         for (int i = 0; i < N; i++) {
