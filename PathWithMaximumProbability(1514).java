@@ -44,3 +44,33 @@ class Pair {
         this.weight = j;
     }
 }
+
+class Solutio {
+    public double maxProbability(int n, int[][] edges, double[] succProb, int start_node, int end_node) {
+         double[] maxProbArray = new double[n];
+        maxProbArray[start_node] = 1.0;
+
+        for (int i = 0; i < n - 1; i++) {
+            boolean updated = false;
+            for (int j = 0; j < edges.length; j++) {
+               
+                double currProb = succProb[j];
+
+                int u = edges[j][0];
+                int v = edges[j][1];
+                if (maxProbArray[v] * currProb > maxProbArray[u]) {
+                    maxProbArray[u] = maxProbArray[v] * currProb;
+                    updated = true;
+                }
+                if (maxProbArray[u] * currProb > maxProbArray[v]) {
+                    maxProbArray[v] = maxProbArray[u] * currProb;
+                    updated = true;
+                }
+            }
+            if (!updated)
+                break;
+        }
+
+        return maxProbArray[end_node];
+    }
+}
