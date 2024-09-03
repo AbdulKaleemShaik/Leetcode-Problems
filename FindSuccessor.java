@@ -12,7 +12,7 @@ class Solution {
 
         }
         Queue<TreeNode> qr = new LinkedList<>();
-        qr.add(root);
+        qr.add(root);SumOf
         while (!qr.isEmpty()) {
             int size = qr.size();
             TreeNode curnode = qr.poll();
