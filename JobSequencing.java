@@ -1,6 +1,7 @@
 import java.util.PriorityQueue;
+
 public class JobSequencing {
-     public static int[] jobScheduling(int[][] jobs) {
+    public static int[] jobScheduling(int[][] jobs) {
         int[] ans = new int[2];
         int time = Integer.MIN_VALUE;
         PriorityQueue<pair> pq = new PriorityQueue<>((a, b) -> b.k - a.k);
@@ -9,7 +10,7 @@ public class JobSequencing {
             pq.add(new pair(jobs[i][0], jobs[i][1], jobs[i][2]));
         }
         int count = 0, sum = 0;
-        boolean[] vis = new boolean[time ];
+        boolean[] vis = new boolean[time];
         while (!pq.isEmpty()) {
             int t = pq.peek().j;
             int profit = pq.peek().k;
@@ -35,6 +36,7 @@ public class JobSequencing {
         return false;
     }
 }
+
 class pair {
     int i, j, k;
 
@@ -44,4 +46,3 @@ class pair {
         this.k = k;
     }
 }
-
